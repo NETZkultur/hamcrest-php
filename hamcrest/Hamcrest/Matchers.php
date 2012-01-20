@@ -613,10 +613,10 @@ class Hamcrest_Matchers
   /**
    * Is the value callable?
    */
-  public static function callable()
+  public static function callableValue()
   {
     require_once 'Hamcrest/Type/IsCallable.php';
-    return Hamcrest_Type_IsCallable::callable();
+    return Hamcrest_Type_IsCallable::callableValue();
   }
 
   /**

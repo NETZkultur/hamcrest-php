@@ -1,9 +1,11 @@
 == Version 1.0.0: Not Released ==
 
-Issues Fixed: 119, 136, 139, 141
+Issues Fixed: 119, 136, 139, 141, 172
 
 * Moved hamcrest.php into hamcrest folder and renamed to Hamcrest.php.
   This is more in line with PEAR packaging standards.
+
+* Renamed callable() to callableValue() for compatibility with PHP 5.4.
 
 * Added Hamcrest_Text_StringContainsIgnoringCase to assert using stripos().
 
@@ -118,6 +120,7 @@ Issues Fixed: 109, 111, 114, 115
     assertThat(array('SomeClass', 'SomeMethod'), callable());
     assertThat(array($object, 'SomeMethod'), callable());
     assertThat($object, callable());
+    assertThat(function ($x, $y) { return $x + $y; }, callable());
 
 * Added Hamcrest_Text_MatchesPattern for regex matching with preg_match().
 
