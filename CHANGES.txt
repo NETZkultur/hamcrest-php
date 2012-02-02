@@ -1,8 +1,8 @@
-== Version 1.0.0: Not Released ==
+== Version 1.0.0: Released Jan 20 2012 ==
 
 Issues Fixed: 119, 136, 139, 141, 172
 
-* Moved hamcrest.php into hamcrest folder and renamed to Hamcrest.php.
+* Moved hamcrest.php into Hamcrest folder and renamed to Hamcrest.php.
   This is more in line with PEAR packaging standards.
 
 * Renamed callable() to callableValue() for compatibility with PHP 5.4.
