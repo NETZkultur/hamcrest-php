@@ -1,6 +1,28 @@
+== Version 1.1.0: Not Released ==
+
+Issues Fixed: 121, 138
+
+* Added non-empty matchers to complement the emptiness-matching forms.
+
+  - nonEmptyString()
+  - nonEmptyArray()
+  - nonEmptyTraversable()
+
+* Added ability to pass variable arguments to several array-based matcher
+  factory methods so they work like allOf() et al.
+
+  - anArray()
+  - arrayContainingInAnyOrder(), containsInAnyOrder()
+  - arrayContaining(), contains()
+  - stringContainsInOrder()
+
+* Matchers that accept an array of matchers now also accept variable arguments.
+  Any non-matcher arguments are wrapped by IsEqual.
+
+
 == Version 1.0.0: Released Jan 20 2012 ==
 
-Issues Fixed: 119, 136, 139, 141, 172
+Issues Fixed: 119, 136, 139, 141, 148, 149, 172
 
 * Moved hamcrest.php into Hamcrest folder and renamed to Hamcrest.php.
   This is more in line with PEAR packaging standards.

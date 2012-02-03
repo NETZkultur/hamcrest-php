@@ -9,22 +9,22 @@ class Hamcrest_Core_AnyOfTest extends Hamcrest_AbstractMatcherTest
   
   protected function createMatcher()
   {
-    return Hamcrest_Core_AnyOf::anyOf(equalTo('irrelevant'));
+    return Hamcrest_Core_AnyOf::anyOf('irrelevant');
   }
   
-  public function testEvaluatesToTheTheLogicalDisjunctionOfTwoOtherMatchers()
+  public function testEvaluatesToTheLogicalDisjunctionOfTwoOtherMatchers()
   {
-    assertThat('good', anyOf(equalTo('bad'), equalTo('good')));
-    assertThat('good', anyOf(equalTo('good'), equalTo('good')));
-    assertThat('good', anyOf(equalTo('good'), equalTo('bad')));
+    assertThat('good', anyOf('bad', 'good'));
+    assertThat('good', anyOf('good', 'good'));
+    assertThat('good', anyOf('good', 'bad'));
     
-    assertThat('good', not(anyOf(equalTo('bad'), equalTo('bad'))));
+    assertThat('good', not(anyOf('bad', startsWith('b'))));
   }
   
-  public function testEvaluatesToTheTheLogicalDisjunctionOfManyOtherMatchers()
+  public function testEvaluatesToTheLogicalDisjunctionOfManyOtherMatchers()
   {
-    assertThat('good', anyOf(equalTo('bad'), equalTo('good'), equalTo('bad'), equalTo('bad'), equalTo('bad')));
-    assertThat('good', not(anyOf(equalTo('bad'), equalTo('bad'), equalTo('bad'), equalTo('bad'), equalTo('bad'))));
+    assertThat('good', anyOf('bad', 'good', 'bad', 'bad', 'bad'));
+    assertThat('good', not(anyOf('bad', 'bad', 'bad', 'bad', 'bad')));
   }
   
   public function testSupportsMixedTypes()
@@ -41,7 +41,7 @@ class Hamcrest_Core_AnyOfTest extends Hamcrest_AbstractMatcherTest
   public function testHasAReadableDescription()
   {
     $this->assertDescription('("good" or "bad" or "ugly")',
-      anyOf(equalTo('good'), equalTo('bad'), equalTo('ugly'))
+      anyOf('good', 'bad', 'ugly')
     );
   }
   
