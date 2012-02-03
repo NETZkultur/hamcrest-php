@@ -1,4 +1,4 @@
-== Version 1.1.0: Not Released ==
+== Version 1.1.0: Released Feb 2 2012 ==
 
 Issues Fixed: 121, 138, 147
 
