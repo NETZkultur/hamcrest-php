@@ -203,6 +203,16 @@ class Hamcrest_Matchers
   }
 
   /**
+   * Evaluates to false if ANY of the passed in matchers evaluate to true.
+   */
+  public static function noneOf(/* args... */)
+  {
+    require_once 'Hamcrest/Core/AnyOf.php';
+    $args = func_get_args();
+    return call_user_func_array(array('Hamcrest_Core_AnyOf', 'noneOf'), $args);
+  }
+
+  /**
    * This is useful for fluently combining matchers that must both pass.
    * For example:
    * <pre>

@@ -42,4 +42,17 @@ class Hamcrest_Core_AnyOf extends Hamcrest_Core_ShortcutCombination
     return new self(Hamcrest_Util::createMatcherArray($args));
   }
 
+  /**
+   * Evaluates to false if ANY of the passed in matchers evaluate to true.
+   *
+   * @factory ...
+   */
+  public static function noneOf(/* args... */)
+  {
+    $args = func_get_args();
+    return Hamcrest_Core_IsNot::not(
+      new self(Hamcrest_Util::createMatcherArray($args))
+    );
+  }
+
 }
