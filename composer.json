@@ -2,7 +2,7 @@
     "name": "kodova/hamcrest-php",
     "type": "library",
     "description": "A port of hamcrest's php library to github with composer support",
-    "keywords": ["matching, test"],
+    "keywords": ["matching", "test"],
     "license": "BSD",
     "authors": [
     ],
