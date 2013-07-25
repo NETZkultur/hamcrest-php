@@ -7,8 +7,8 @@
 /**
  * Tests for the presence of both a key and value inside an array.
  */
-class crest_Array_IsArrayContainingKeyValuePair
-  extends crest_TypeSafeMatcher
+class Hamcrest_Array_IsArrayContainingKeyValuePair
+  extends Hamcrest_TypeSafeMatcher
 {
 
   private $_keyMatcher;
