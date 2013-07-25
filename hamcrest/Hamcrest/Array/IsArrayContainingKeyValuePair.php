@@ -1,21 +1,16 @@
 <?php
-
-//require_once 'crest/TypeSafeMatcher.php';
-//require_once 'crest/Description.php';
-//require_once 'crest/Util.php';
-
 /**
  * Tests for the presence of both a key and value inside an array.
  */
-class crest_Array_IsArrayContainingKeyValuePair
-  extends crest_TypeSafeMatcher
+class Hamcrest_Array_IsArrayContainingKeyValuePair
+  extends Hamcrest_TypeSafeMatcher
 {
 
   private $_keyMatcher;
   private $_valueMatcher;
 
   public function __construct(crest_Matcher $keyMatcher,
-    crest_Matcher $valueMatcher)
+    Hamcrest_Matcher $valueMatcher)
   {
     parent::__construct(self::TYPE_ARRAY);
 
@@ -38,7 +33,7 @@ class crest_Array_IsArrayContainingKeyValuePair
   }
 
   protected function describeMismatchSafely($array,
-    crest_Description $mismatchDescription)
+     Hamcrest_Description $mismatchDescription)
   {
     //Not using appendValueList() so that keys can be shown
     $mismatchDescription->appendText('array was ')
@@ -57,7 +52,7 @@ class crest_Array_IsArrayContainingKeyValuePair
     $mismatchDescription->appendText(']');
   }
 
-  public function describeTo(crest_Description $description)
+  public function describeTo(Hamcrest_Description $description)
   {
     $description->appendText('array containing [')
                 ->appendDescriptionOf($this->_keyMatcher)
@@ -75,8 +70,8 @@ class crest_Array_IsArrayContainingKeyValuePair
   public static function hasKeyValuePair($key, $value)
   {
     return new self(
-      crest_Util::wrapValueWithIsEqual($key),
-      crest_Util::wrapValueWithIsEqual($value)
+      Hamcrest_Util::wrapValueWithIsEqual($key),
+      Hamcrest_Util::wrapValueWithIsEqual($value)
     );
   }
 
