@@ -9,7 +9,7 @@ class Hamcrest_Array_IsArrayContainingKeyValuePair
   private $_keyMatcher;
   private $_valueMatcher;
 
-  public function __construct(crest_Matcher $keyMatcher,
+  public function __construct(Hamcrest_Matcher $keyMatcher,
     Hamcrest_Matcher $valueMatcher)
   {
     parent::__construct(self::TYPE_ARRAY);
